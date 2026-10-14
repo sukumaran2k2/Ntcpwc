@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import ScrollMotionShowcase from './ScrollMotionShowcase';
 import Link from 'next/link';
 import { 
   Building2, 
@@ -432,6 +433,9 @@ export default function ProfessionalHomeView() {
 
         </div>
       </section>
+
+      {/* INTERACTIVE MOTION GRAPHIC SCROLL ENGINE: RESEARCH LAB -> WATER & SHIP */}
+      <ScrollMotionShowcase />
 
       {/* 3. AUTHENTIC "OUR FEATURES · WHY CHOOSE US" FROM OLD WEBSITE WITH CENTER VESSEL */}
       <section className="py-20 md:py-28 bg-[#faf6f0] border-b border-[#e8ded0]">
