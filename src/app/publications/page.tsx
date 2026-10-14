@@ -42,7 +42,7 @@ export default function PublicationsPage() {
         {/* Hero */}
         <section className="relative py-20 overflow-hidden">
           <div className="absolute inset-0 gradient-hero" />
-          <div className="relative max-w-7xl mx-auto px-6 text-center">
+          <div className="relative w-full px-4 sm:px-6 lg:px-8 text-center">
             <AnimatedSection>
               <h1 className="text-5xl md:text-6xl font-black text-white font-display mb-4">
                 Publications <span className="gradient-text">&amp; Reports</span>
@@ -56,7 +56,7 @@ export default function PublicationsPage() {
 
         {/* Filters */}
         <section className="sticky top-16 z-30 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100">
-          <div className="max-w-7xl mx-auto px-6 py-4">
+          <div className="w-full px-4 sm:px-6 lg:px-8 py-4">
             <div className="flex flex-col md:flex-row gap-4">
               {/* Search */}
               <div className="relative flex-1">
@@ -93,7 +93,7 @@ export default function PublicationsPage() {
 
         {/* Publications List */}
         <section className="section-padding bg-[#f8fafc]">
-          <div className="max-w-7xl mx-auto px-6">
+          <div className="w-full px-4 sm:px-6 lg:px-8">
             <p className="text-sm text-gray-500 mb-6">
               Showing {filtered.length} publication{filtered.length !== 1 ? "s" : ""}
             </p>

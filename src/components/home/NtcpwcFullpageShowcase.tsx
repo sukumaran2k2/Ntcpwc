@@ -258,7 +258,7 @@ export default function NtcpwcFullpageShowcase() {
           <div className="relative z-10 pt-28 sm:pt-32" />
 
           {/* Slide Main Content */}
-          <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full py-8">
+          <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 sm:px-8 lg:px-12 w-full py-8">
             <div className="max-w-3xl">
               
               {/* Category Tag */}
@@ -321,7 +321,7 @@ export default function NtcpwcFullpageShowcase() {
 
           {/* Slide Bottom Metrics Matrix Strip */}
           <div className="relative z-10 w-full border-t border-white/10 bg-slate-950/70 backdrop-blur-lg">
-            <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-5 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div className="w-full px-4 sm:px-6 lg:px-8 sm:px-8 lg:px-12 py-5 flex flex-col sm:flex-row items-center justify-between gap-6">
               
               {/* Metrics Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-12 w-full sm:w-auto">
@@ -367,7 +367,7 @@ export default function NtcpwcFullpageShowcase() {
 
       {/* Clean Institutional Bottom Overview Strip */}
       <footer className="relative z-10 bg-[#010813] text-slate-400 py-12 border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="w-full px-4 sm:px-6 lg:px-8 sm:px-8 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-1 text-center md:text-left">
             <div className="text-white font-bold text-base">
               National Technology Centre for Ports, Waterways and Coasts (NTCPWC)

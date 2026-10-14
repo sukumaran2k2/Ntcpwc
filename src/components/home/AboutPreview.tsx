@@ -58,7 +58,7 @@ export default function AboutPreview() {
       <div className="absolute top-0 right-0 w-96 h-96 bg-blue-50/60 rounded-full blur-3xl -z-10 pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-cyan-50/40 rounded-full blur-3xl -z-10 pointer-events-none" />
 
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+      <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left: Content */}
           <div className="lg:col-span-7">

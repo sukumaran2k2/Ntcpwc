@@ -26,7 +26,7 @@ export default function Footer() {
     <footer className="bg-[#0a2240] text-white">
       {/* Newsletter */}
       <div className="bg-gradient-to-r from-[#0a3d6b] to-[#00b4d8]">
-        <div className="max-w-7xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="w-full px-4 sm:px-6 lg:px-8 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <h3 className="text-xl font-bold font-display">Stay Updated with Our Research</h3>
             <p className="text-blue-100 text-sm mt-1">Subscribe to receive the latest publications and news.</p>
@@ -49,7 +49,7 @@ export default function Footer() {
       </div>
 
       {/* Main footer */}
-      <div className="max-w-7xl mx-auto px-6 py-14">
+      <div className="w-full px-4 sm:px-6 lg:px-8 py-14">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="lg:col-span-1">
@@ -166,7 +166,7 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-blue-300">
+        <div className="w-full px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-blue-300">
           <p>© {currentYear} NTCPWC – National Technology Centre for Ports, Waterways and Coasts. All rights reserved.</p>
           <div className="flex items-center gap-4">
             <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>

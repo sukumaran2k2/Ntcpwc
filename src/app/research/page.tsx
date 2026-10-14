@@ -26,7 +26,7 @@ export default function ResearchPage() {
         {/* Hero */}
         <section className="relative py-20 overflow-hidden">
           <div className="absolute inset-0 gradient-hero" />
-          <div className="relative max-w-7xl mx-auto px-6 text-center">
+          <div className="relative w-full px-4 sm:px-6 lg:px-8 text-center">
             <AnimatedSection>
               <h1 className="text-5xl md:text-6xl font-black text-white font-display mb-4">
                 Research <span className="gradient-text">Areas</span>
@@ -40,7 +40,7 @@ export default function ResearchPage() {
 
         {/* Filter & Cards */}
         <section className="section-padding bg-[#f8fafc]">
-          <div className="max-w-7xl mx-auto px-6">
+          <div className="w-full px-4 sm:px-6 lg:px-8">
             {/* Filters */}
             <AnimatedSection className="flex flex-wrap items-center gap-3 mb-10">
               <Filter className="w-4 h-4 text-gray-400" />

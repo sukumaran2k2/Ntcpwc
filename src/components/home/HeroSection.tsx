@@ -145,7 +145,7 @@ export default function HeroSection() {
       </div>
 
       {/* 2. Top Controls Bar: Video Status & Play/Pause */}
-      <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12 w-full pt-2 flex items-center justify-between">
+      <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 w-full pt-2 flex items-center justify-between">
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/60 backdrop-blur-md border border-white/20 text-[11.5px] font-semibold text-blue-200 shadow-sm">
           <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping shrink-0" />
           <Waves className="w-4 h-4 text-blue-300" />
@@ -187,7 +187,7 @@ export default function HeroSection() {
       </div>
 
       {/* 3. Main Hero Content */}
-      <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12 w-full my-auto py-8">
+      <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 w-full my-auto py-8">
         <div className="max-w-3xl">
           {/* Government / Sagarmala Badge */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-950/80 backdrop-blur-md border border-blue-400/40 text-blue-200 text-xs font-semibold tracking-wide uppercase mb-6 shadow-md">
@@ -237,7 +237,7 @@ export default function HeroSection() {
       </div>
 
       {/* 4. Floating Bottom Bar: Stats + Controls */}
-      <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12 w-full mt-4">
+      <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 w-full mt-4">
         <div className="bg-[#0b1e36]/90 backdrop-blur-md border border-slate-700/60 rounded-xl p-4 sm:p-5 flex flex-col lg:flex-row items-center justify-between gap-6 shadow-2xl">
           {/* Key Metric Counters */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8 w-full lg:w-auto">

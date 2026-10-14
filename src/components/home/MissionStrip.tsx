@@ -39,7 +39,7 @@ export default function MissionStrip() {
         />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-6">
+      <div className="relative w-full px-4 sm:px-6 lg:px-8">
         <AnimatedSection className="text-center mb-14">
           <div className="inline-flex items-center gap-2 mb-4">
             <div className="w-8 h-0.5 bg-[#00b4d8]" />

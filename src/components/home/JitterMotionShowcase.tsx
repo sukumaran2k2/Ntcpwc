@@ -212,7 +212,7 @@ export default function JitterMotionShowcase() {
       </div>
 
       {/* Main Kinetic Content Header & Carousel Bar */}
-      <div className="relative z-20 max-w-7xl mx-auto w-full pt-8 pb-4">
+      <div className="relative z-20 w-full px-4 sm:px-6 lg:px-8 w-full pt-8 pb-4">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-mono font-semibold uppercase tracking-wider mb-3">
@@ -389,7 +389,7 @@ export default function JitterMotionShowcase() {
       </div>
 
       {/* Bottom Minimal Footer Strip */}
-      <div className="relative z-20 max-w-7xl mx-auto w-full pt-8 pb-4 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+      <div className="relative z-20 w-full px-4 sm:px-6 lg:px-8 w-full pt-8 pb-4 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
         <div>
           © 2026 NTCPWC · National Technology Centre for Ports, Waterways & Coasts, IIT Madras Discovery Campus
         </div>

@@ -302,7 +302,7 @@ export default function CanvasScrollMotion() {
         )}
 
         {/* Top Header HUD Bar */}
-        <div className="relative z-20 max-w-7xl mx-auto px-6 pt-6 w-full flex items-center justify-between">
+        <div className="relative z-20 w-full px-4 sm:px-6 lg:px-8 pt-6 w-full flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="p-2 rounded-xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-400">
               <Layers className="w-4 h-4" />
@@ -334,7 +334,7 @@ export default function CanvasScrollMotion() {
         </div>
 
         {/* Center Floating Motion Graphic Narrative Card */}
-        <div className="relative z-20 max-w-7xl mx-auto px-6 py-auto w-full my-auto">
+        <div className="relative z-20 w-full px-4 sm:px-6 lg:px-8 py-auto w-full my-auto">
           <div className="max-w-xl">
             {/* Animated phase badge */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase border mb-4 backdrop-blur-md bg-slate-950/80 border-cyan-500/40 text-cyan-300">
@@ -380,7 +380,7 @@ export default function CanvasScrollMotion() {
         </div>
 
         {/* Bottom Scrubbing Progress Rail & Timeline */}
-        <div className="relative z-20 max-w-7xl mx-auto px-6 pb-6 w-full">
+        <div className="relative z-20 w-full px-4 sm:px-6 lg:px-8 pb-6 w-full">
           <div className="p-4 rounded-2xl bg-slate-950/80 backdrop-blur-md border border-cyan-500/20 flex flex-col sm:flex-row items-center justify-between gap-4">
             
             {/* Timeline phase indicators */}

@@ -9,7 +9,7 @@ import { newsEvents } from "@/lib/data";
 export default function NewsEventsSection() {
   return (
     <section className="section-padding bg-[#f8fafc]">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="w-full px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="flex items-end justify-between mb-12">
           <AnimatedSection>

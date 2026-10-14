@@ -36,7 +36,7 @@ export default function Navbar() {
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
       {/* Top Government & Sagarmala Strip - Warm Earthy Espresso */}
       <div className="bg-[#241a12] text-[#d6c9bc] text-xs border-b border-[#3d2e20] hidden sm:block">
-        <div className="max-w-[1440px] mx-auto px-6 lg:px-12 py-2 flex items-center justify-between">
+        <div className="w-full px-4 sm:px-6 lg:px-8 py-2 flex items-center justify-between">
           {/* Government Affiliation */}
           <div className="flex items-center gap-3">
             <span className="inline-flex items-center gap-1.5 font-medium text-[#e3d7cb]">
@@ -82,7 +82,7 @@ export default function Navbar() {
             : "bg-white shadow-xs border-b border-[#eee7dc]"
         }`}
       >
-        <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
+        <div className="w-full px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             {/* Brand Logo & Title */}
             <Link href="/" className="flex items-center gap-3.5 group">

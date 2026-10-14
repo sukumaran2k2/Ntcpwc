@@ -175,7 +175,7 @@ export default function Scrollytelling3D() {
       />
 
       {/* Top Banner / Section Header */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 mb-12 text-center">
+      <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 mb-12 text-center">
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-semibold uppercase tracking-wider mb-4">
           <Layers className="w-3.5 h-3.5" />
           <span>Interactive 3D Digital Twin Scrollytelling</span>
@@ -196,7 +196,7 @@ export default function Scrollytelling3D() {
       </div>
 
       {/* Main Scrollytelling Two-Column Canvas */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+      <div className="w-full px-4 sm:px-6 lg:px-8 pb-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start relative">
 
           {/* Sticky 3D AI Visual Screen (Pinned Column - 7 cols) */}

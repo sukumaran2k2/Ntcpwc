@@ -18,7 +18,7 @@ const iconMap: Record<string, React.ElementType> = {
 export default function ServiceCards() {
   return (
     <section className="py-16 sm:py-20 bg-slate-50/70 border-b border-slate-200/80">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+      <div className="w-full px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-12">
           <span className="text-xs font-bold text-[#00b4d8] uppercase tracking-wider">

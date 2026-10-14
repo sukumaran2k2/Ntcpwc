@@ -187,7 +187,7 @@ export default function ProfessionalHomeView() {
           }}
         />
 
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
+        <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             
@@ -360,7 +360,7 @@ export default function ProfessionalHomeView() {
 
       {/* 2. AUTHENTIC "ABOUT US" SECTION FROM OLD WEBSITE */}
       <section className="py-20 bg-white border-b border-[#e8ded0]">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+        <div className="w-full px-4 sm:px-6 lg:px-8">
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
@@ -435,7 +435,7 @@ export default function ProfessionalHomeView() {
 
       {/* 3. AUTHENTIC "OUR FEATURES · WHY CHOOSE US" FROM OLD WEBSITE WITH CENTER VESSEL */}
       <section className="py-20 md:py-28 bg-[#faf6f0] border-b border-[#e8ded0]">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+        <div className="w-full px-4 sm:px-6 lg:px-8">
           
           {/* Header */}
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -571,7 +571,7 @@ export default function ProfessionalHomeView() {
 
       {/* 4. WORLD-CLASS TESTING & SIMULATION FACILITIES (INTERACTIVE TABS) */}
       <section className="py-20 md:py-28 bg-white border-b border-[#e8ded0]">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+        <div className="w-full px-4 sm:px-6 lg:px-8">
           
           {/* Section Header */}
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
@@ -694,7 +694,7 @@ export default function ProfessionalHomeView() {
 
       {/* 5. SOME OF OUR PARTNERS (AUTHENTIC PARTNERS SECTION FROM OLD WEBSITE) */}
       <section className="py-20 bg-white border-b border-[#e8ded0]">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+        <div className="w-full px-4 sm:px-6 lg:px-8">
           
           <div className="flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-12">
             
@@ -781,7 +781,7 @@ export default function ProfessionalHomeView() {
 
       {/* 6. AUTHENTIC 2 CAMPUS LOCATIONS WITH INTERACTIVE MAPS FROM OLD WEBSITE */}
       <section className="py-20 bg-[#faf6f0] border-b border-[#e8ded0]">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+        <div className="w-full px-4 sm:px-6 lg:px-8">
           
           <div className="text-center max-w-2xl mx-auto mb-12">
             <span className="text-sm font-bold text-[#b45309] uppercase tracking-wider block mb-1">
@@ -910,7 +910,7 @@ export default function ProfessionalHomeView() {
 
       {/* 7. AUTHENTIC "FIND US AT THE OFFICE" + "CONTACT US" FORM (FROM SCREENSHOT 2) */}
       <section className="py-20 md:py-28 bg-[#fdfbf7] border-b border-[#e8ded0]">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+        <div className="w-full px-4 sm:px-6 lg:px-8">
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             
@@ -1095,7 +1095,7 @@ export default function ProfessionalHomeView() {
 
       {/* 8. COMPLETE INSTITUTIONAL FOOTER (AUTHENTIC FROM SCREENSHOT 2) */}
       <footer className="bg-[#f4f7fa] text-[#4b5563] pt-16 border-t border-[#dce3ec] text-xs">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 pb-12">
+        <div className="w-full px-4 sm:px-6 lg:px-8 pb-12">
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-8">
             
@@ -1260,7 +1260,7 @@ export default function ProfessionalHomeView() {
 
         {/* Navy Bottom Bar (Exact from Screenshot 2) */}
         <div className="bg-[#1c2c54] py-3.5 px-6 lg:px-12 text-white border-t border-[#2d3e6d]">
-          <div className="max-w-[1400px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-medium">
+          <div className="w-full px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-medium">
             <div className="flex items-center gap-3 font-semibold">
               <Link href="/privacy" className="hover:text-[#93c5fd] transition-colors">Privacy Policy</Link>
               <span className="text-gray-400">|</span>

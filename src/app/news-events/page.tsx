@@ -19,7 +19,7 @@ export default function NewsEventsPage() {
         {/* Hero */}
         <section className="relative py-20 overflow-hidden">
           <div className="absolute inset-0 gradient-hero" />
-          <div className="relative max-w-7xl mx-auto px-6 text-center">
+          <div className="relative w-full px-4 sm:px-6 lg:px-8 text-center">
             <AnimatedSection>
               <h1 className="text-5xl md:text-6xl font-black text-white font-display mb-4">
                 News &amp; <span className="gradient-text">Events</span>
@@ -33,7 +33,7 @@ export default function NewsEventsPage() {
 
         {/* Featured */}
         <section className="section-padding bg-white">
-          <div className="max-w-7xl mx-auto px-6">
+          <div className="w-full px-4 sm:px-6 lg:px-8">
             <AnimatedSection className="mb-10">
               <h2 className="text-3xl font-black text-[#0a2240] font-display">Latest Updates</h2>
             </AnimatedSection>
