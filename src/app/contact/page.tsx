@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import AnimatedSection from "@/components/ui/AnimatedSection";
@@ -18,163 +17,174 @@ export default function ContactPage() {
   };
 
   const contactInfo = [
-    { icon: MapPin, label: "Address", value: siteData.address, color: "#0a3d6b" },
-    { icon: Phone, label: "Phone", value: siteData.phone, color: "#00b4d8" },
-    { icon: Mail, label: "Email", value: siteData.email, color: "#2dd4bf" },
-    { icon: Clock, label: "Office Hours", value: "Mon–Fri: 9:00 AM – 5:30 PM IST", color: "#f59e0b" },
+    { icon: MapPin, label: "Address", value: siteData.address },
+    { icon: Phone, label: "Phone", value: siteData.phone },
+    { icon: Mail, label: "Email", value: siteData.email },
+    { icon: Clock, label: "Office Hours", value: "Mon–Fri: 9:00 AM – 5:30 PM IST" },
   ];
 
   return (
-    <>
+    <div className="min-h-screen bg-[#fcfaf7] text-[#291e13] font-sans antialiased selection:bg-[#c29b68]/30 selection:text-[#291e13]">
       <Navbar />
-      <main className="pt-24">
-        {/* Hero */}
-        <section className="relative py-20 overflow-hidden">
-          <div className="absolute inset-0 gradient-hero" />
-          <div className="relative w-full px-4 sm:px-6 lg:px-8 text-center">
+      
+      <main className="pt-24 sm:pt-28">
+        {/* HERO */}
+        <section className="relative py-16 md:py-20 bg-gradient-to-b from-[#f5ede1] via-[#faf5ec] to-[#fcfaf7] border-b border-[#e8ded0] overflow-hidden">
+          <div 
+            className="absolute inset-0 opacity-[0.035] pointer-events-none"
+            style={{
+              backgroundImage: 'linear-gradient(#8c6d46 1px, transparent 1px), linear-gradient(90deg, #8c6d46 1px, transparent 1px)',
+              backgroundSize: '48px 48px'
+            }}
+          />
+          <div className="relative w-full px-4 sm:px-6 lg:px-8 text-center max-w-4xl mx-auto">
             <AnimatedSection>
-              <h1 className="text-5xl md:text-6xl font-black text-white font-display mb-4">
-                Get in <span className="gradient-text">Touch</span>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-[#d8cbbb] text-xs font-bold text-[#b45309] shadow-xs mb-4">
+                <span className="w-2 h-2 rounded-full bg-[#b45309] animate-pulse" />
+                <span>DISCOVERY CAMPUS • THAIYUR, CHENNAI</span>
+              </div>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#291e13] tracking-tight leading-[1.12]">
+                Contact &amp; <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#755530] via-[#8c6d46] to-[#b45309]">Connect</span>
               </h1>
-              <p className="text-blue-200 text-xl max-w-2xl mx-auto">
-                Have a question or want to collaborate? We&apos;d love to hear from you.
+              <p className="mt-4 text-base sm:text-lg text-[#5e5042] max-w-2xl mx-auto leading-relaxed">
+                Connect with our academic directors, technical consultants, and testing facilities for research partnerships or project advisories.
               </p>
             </AnimatedSection>
           </div>
         </section>
 
-        {/* Contact Section */}
-        <section className="section-padding bg-[#f8fafc]">
+        {/* CONTENT GRID */}
+        <section className="py-16 md:py-24 bg-[#fcfaf7]">
           <div className="w-full px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              {/* Left: Info */}
-              <AnimatedSection direction="left">
-                <h2 className="text-3xl font-black text-[#0a2240] font-display mb-8">Contact Information</h2>
-                <div className="space-y-6 mb-10">
-                  {contactInfo.map((info, i) => {
-                    const Icon = info.icon;
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
+              
+              {/* CONTACT DETAILS (5 cols) */}
+              <div className="lg:col-span-5 space-y-6">
+                <div>
+                  <h2 className="text-2xl font-bold text-[#291e13] font-display mb-2">
+                    Institutional Headquarters
+                  </h2>
+                  <p className="text-sm text-[#5e5042] leading-relaxed">
+                    National Technology Centre for Ports, Waterways &amp; Coasts (NTCPWC) at the 20-Acre IIT Madras Discovery Campus.
+                  </p>
+                </div>
+
+                <div className="space-y-4">
+                  {contactInfo.map((item, idx) => {
+                    const Icon = item.icon;
                     return (
-                      <div key={i} className="flex items-start gap-4">
-                        <div
-                          className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                          style={{ backgroundColor: `${info.color}15` }}
-                        >
-                          <Icon className="w-5 h-5" style={{ color: info.color }} />
+                      <div key={idx} className="p-5 rounded-2xl bg-white border border-[#e8ded0] flex items-start gap-4">
+                        <div className="w-10 h-10 rounded-xl bg-[#f4ece0] text-[#8c6d46] border border-[#dfd2be] flex items-center justify-center shrink-0">
+                          <Icon className="w-5 h-5 text-[#755530]" />
                         </div>
                         <div>
-                          <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider">{info.label}</p>
-                          <p className="text-gray-700 text-sm mt-0.5">{info.value}</p>
+                          <div className="text-xs font-bold uppercase text-[#8c6d46] tracking-wider">
+                            {item.label}
+                          </div>
+                          <div className="text-sm text-[#291e13] font-medium mt-0.5 whitespace-pre-line">
+                            {item.value}
+                          </div>
                         </div>
                       </div>
                     );
                   })}
                 </div>
+              </div>
 
-                {/* Map placeholder */}
-                <div className="rounded-2xl overflow-hidden h-56 bg-blue-100 flex items-center justify-center border border-gray-200">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.0617047887497!2d80.23228531482287!3d13.009806290821!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52677000000001%3A0x8b4b3b3b3b3b3b3b!2sIIT%20Madras!5e0!3m2!1sen!2sin!4v1628000000000!5m2!1sen!2sin"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy"
-                    title="NTCPWC Location"
-                  />
-                </div>
-              </AnimatedSection>
-
-              {/* Right: Form */}
-              <AnimatedSection direction="right">
-                <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+              {/* CONTACT FORM (7 cols) */}
+              <div className="lg:col-span-7">
+                <div className="p-8 sm:p-10 rounded-2xl bg-white border border-[#e8ded0] shadow-sm">
                   {submitted ? (
-                    <motion.div
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      className="text-center py-10"
-                    >
-                      <CheckCircle2 className="w-16 h-16 text-green-500 mx-auto mb-4" />
-                      <h3 className="text-xl font-bold text-[#0a2240] font-display mb-2">Message Sent!</h3>
-                      <p className="text-gray-500 text-sm">Thank you for contacting us. We&apos;ll get back to you within 2 business days.</p>
-                      <button
-                        onClick={() => { setSubmitted(false); setForm({ name: "", email: "", subject: "", message: "" }); }}
-                        className="mt-6 px-6 py-2.5 bg-[#0a3d6b] text-white text-sm font-semibold rounded-xl hover:bg-[#1a5fa8] transition-all"
-                      >
-                        Send Another
-                      </button>
-                    </motion.div>
+                    <div className="text-center py-12 space-y-3">
+                      <div className="w-12 h-12 rounded-full bg-[#ecfdf5] text-[#047857] border border-[#a7f3d0] flex items-center justify-center mx-auto">
+                        <CheckCircle2 className="w-6 h-6" />
+                      </div>
+                      <h3 className="text-xl font-bold text-[#291e13]">Inquiry Submitted Successfully</h3>
+                      <p className="text-xs sm:text-sm text-[#5e5042] max-w-md mx-auto">
+                        Thank you for reaching out to NTCPWC. Our technical liaison team will review your message and respond shortly.
+                      </p>
+                    </div>
                   ) : (
-                    <>
-                      <h2 className="text-2xl font-black text-[#0a2240] font-display mb-6">Send a Message</h2>
-                      <form onSubmit={handleSubmit} className="space-y-5">
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                          <div>
-                            <label htmlFor="contact-name" className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Full Name *</label>
-                            <input
-                              id="contact-name"
-                              required
-                              type="text"
-                              value={form.name}
-                              onChange={(e) => setForm({ ...form, name: e.target.value })}
-                              placeholder="Dr. John Smith"
-                              className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#0a3d6b]/20 focus:border-[#0a3d6b] transition-all"
-                            />
-                          </div>
-                          <div>
-                            <label htmlFor="contact-email" className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Email Address *</label>
-                            <input
-                              id="contact-email"
-                              required
-                              type="email"
-                              value={form.email}
-                              onChange={(e) => setForm({ ...form, email: e.target.value })}
-                              placeholder="john@example.com"
-                              className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#0a3d6b]/20 focus:border-[#0a3d6b] transition-all"
-                            />
-                          </div>
-                        </div>
+                    <form onSubmit={handleSubmit} className="space-y-5">
+                      <h3 className="text-xl font-bold text-[#291e13] font-display mb-4">
+                        Send an Advisory or Technical Query
+                      </h3>
+
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                         <div>
-                          <label htmlFor="contact-subject" className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Subject *</label>
+                          <label className="block text-xs font-bold text-[#5e5042] uppercase tracking-wider mb-1.5">
+                            Full Name
+                          </label>
                           <input
-                            id="contact-subject"
-                            required
                             type="text"
-                            value={form.subject}
-                            onChange={(e) => setForm({ ...form, subject: e.target.value })}
-                            placeholder="Research collaboration inquiry"
-                            className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#0a3d6b]/20 focus:border-[#0a3d6b] transition-all"
+                            required
+                            value={form.name}
+                            onChange={(e) => setForm({ ...form, name: e.target.value })}
+                            className="w-full px-4 py-2.5 rounded-xl border border-[#d8cbbb] bg-[#faf6f0]/40 text-[#291e13] text-sm focus:border-[#8c6d46] focus:ring-1 focus:ring-[#8c6d46] outline-hidden"
+                            placeholder="e.g. Dr. Ramesh Kumar"
                           />
                         </div>
                         <div>
-                          <label htmlFor="contact-message" className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Message *</label>
-                          <textarea
-                            id="contact-message"
+                          <label className="block text-xs font-bold text-[#5e5042] uppercase tracking-wider mb-1.5">
+                            Official Email
+                          </label>
+                          <input
+                            type="email"
                             required
-                            rows={5}
-                            value={form.message}
-                            onChange={(e) => setForm({ ...form, message: e.target.value })}
-                            placeholder="Write your message here..."
-                            className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#0a3d6b]/20 focus:border-[#0a3d6b] transition-all resize-none"
+                            value={form.email}
+                            onChange={(e) => setForm({ ...form, email: e.target.value })}
+                            className="w-full px-4 py-2.5 rounded-xl border border-[#d8cbbb] bg-[#faf6f0]/40 text-[#291e13] text-sm focus:border-[#8c6d46] focus:ring-1 focus:ring-[#8c6d46] outline-hidden"
+                            placeholder="name@organization.gov.in"
                           />
                         </div>
-                        <button
-                          id="contact-submit-btn"
-                          type="submit"
-                          className="w-full flex items-center justify-center gap-2 py-3.5 bg-[#0a3d6b] text-white font-semibold rounded-xl hover:bg-[#1a5fa8] transition-all hover:shadow-lg hover:-translate-y-0.5"
-                        >
-                          <Send className="w-4 h-4" />
-                          Send Message
-                        </button>
-                      </form>
-                    </>
+                      </div>
+
+                      <div>
+                        <label className="block text-xs font-bold text-[#5e5042] uppercase tracking-wider mb-1.5">
+                          Subject / Domain Area
+                        </label>
+                        <input
+                          type="text"
+                          required
+                          value={form.subject}
+                          onChange={(e) => setForm({ ...form, subject: e.target.value })}
+                          className="w-full px-4 py-2.5 rounded-xl border border-[#d8cbbb] bg-[#faf6f0]/40 text-[#291e13] text-sm focus:border-[#8c6d46] focus:ring-1 focus:ring-[#8c6d46] outline-hidden"
+                          placeholder="e.g. Wave Flume Testing for Port Breakwater"
+                        />
+                      </div>
+
+                      <div>
+                        <label className="block text-xs font-bold text-[#5e5042] uppercase tracking-wider mb-1.5">
+                          Message / Technical Scope
+                        </label>
+                        <textarea
+                          rows={4}
+                          required
+                          value={form.message}
+                          onChange={(e) => setForm({ ...form, message: e.target.value })}
+                          className="w-full px-4 py-2.5 rounded-xl border border-[#d8cbbb] bg-[#faf6f0]/40 text-[#291e13] text-sm focus:border-[#8c6d46] focus:ring-1 focus:ring-[#8c6d46] outline-hidden"
+                          placeholder="Describe your project, required parameters, and desired timeline..."
+                        />
+                      </div>
+
+                      <button
+                        type="submit"
+                        className="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-[#8c6d46] hover:bg-[#785b34] text-white font-semibold text-sm shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer"
+                      >
+                        <Send className="w-4 h-4" />
+                        <span>Submit Inquiry</span>
+                      </button>
+                    </form>
                   )}
                 </div>
-              </AnimatedSection>
+              </div>
+
             </div>
           </div>
         </section>
       </main>
+
       <Footer />
-    </>
+    </div>
   );
 }
