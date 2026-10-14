@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { 
@@ -8,83 +8,18 @@ import {
   ChevronRight, 
   CheckCircle2, 
   ExternalLink,
-  Ship,
-  Anchor,
-  Compass,
-  Navigation,
-  Wind,
-  Waves,
-  Activity,
-  RotateCcw,
-  Play,
-  Pause,
   ShieldCheck,
-  Zap
+  Building2
 } from 'lucide-react';
 
 export default function HeroMotionSection() {
   const [isLoaded, setIsLoaded] = useState(false);
-  const [shipState, setShipState] = useState<'sailing' | 'decelerating' | 'parked'>('sailing');
-  const [shipProgress, setShipProgress] = useState(0); // 0 to 1
-  const [shipSpeed, setShipSpeed] = useState(14.8);
-  const [isAutoPlay, setIsAutoPlay] = useState(true);
 
   // Trigger entrance animations when component mounts
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoaded(true), 100);
+    const timer = setTimeout(() => setIsLoaded(true), 80);
     return () => clearTimeout(timer);
   }, []);
-
-  // Continuous ship sailing & parking loop animation
-  useEffect(() => {
-    let animFrame: number;
-    let startTime = performance.now();
-    const cycleDuration = 10000; // 10 second cycle
-
-    const loop = (currentTime: number) => {
-      const elapsed = (currentTime - startTime) % cycleDuration;
-      const progress = elapsed / cycleDuration; // 0 to 1
-
-      setShipProgress(progress);
-
-      if (progress < 0.45) {
-        // Sailing in from deep water
-        setShipState('sailing');
-        setShipSpeed(Number((14.8 - progress * 10).toFixed(1)));
-      } else if (progress < 0.75) {
-        // Decelerating and aligning with berth
-        setShipState('decelerating');
-        const decelProgress = (progress - 0.45) / 0.3;
-        setShipSpeed(Number((10.3 * (1 - decelProgress)).toFixed(1)));
-      } else {
-        // Smoothly parked / berthed in water
-        setShipState('parked');
-        setShipSpeed(0.0);
-      }
-
-      animFrame = requestAnimationFrame(loop);
-    };
-
-    if (isAutoPlay) {
-      animFrame = requestAnimationFrame(loop);
-    }
-
-    return () => cancelAnimationFrame(animFrame);
-  }, [isAutoPlay]);
-
-  // Restart ship animation
-  const restartShip = () => {
-    setShipProgress(0);
-    setShipState('sailing');
-    setShipSpeed(14.8);
-    setIsAutoPlay(true);
-  };
-
-  // Ship position interpolation:
-  // Starts top-right offscreen/deep water -> glides diagonally -> parks neatly alongside the pier
-  const shipX = -180 + shipProgress * 260; // moves from left/diagonal into berth
-  const shipY = 40 + Math.sin(shipProgress * Math.PI) * 15; // gentle hydrodynamic buoyancy wave
-  const shipAngle = shipState === 'parked' ? 0 : Math.sin(shipProgress * 6) * 2; // subtle rolling in waves
 
   return (
     <section className="relative pt-28 pb-16 md:pt-36 md:pb-24 bg-gradient-to-b from-[#faf6f0] via-[#f7f1e7]/40 to-white border-b border-[#e8ded0] overflow-hidden">
@@ -100,7 +35,7 @@ export default function HeroMotionSection() {
 
       <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* ================= UPPER HERO GRID: KINETIC TEXT + ANIMATED SHIP BERTHING ================= */}
+        {/* ================= UPPER HERO GRID: KINETIC TYPOGRAPHY + DISCOVERY CAMPUS VISUAL ================= */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           
           {/* LEFT COLUMN: KINETIC TYPOGRAPHY & MOTIONS (7 cols) */}
@@ -191,185 +126,48 @@ export default function HeroMotionSection() {
 
           </div>
 
-          {/* RIGHT COLUMN: INTERACTIVE ANIMATED SHIP COMING & GETTING PARKED IN WATER (5 cols) */}
+          {/* RIGHT COLUMN: DISCOVERY CAMPUS VISUAL SHOWCASE (5 cols) */}
           <div 
             className={`lg:col-span-5 transition-all duration-1000 delay-300 ease-out ${
               isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'
             }`}
           >
-            <div className="relative rounded-3xl overflow-hidden bg-[#091522] border-2 border-[#c29b68]/40 shadow-2xl">
+            <div className="relative rounded-2xl overflow-hidden bg-white border border-[#e2d5c3] shadow-xl group">
               
-              {/* TOP SIMULATION STATUS BAR */}
-              <div className="p-3.5 bg-[#0e1c2e] border-b border-white/10 flex items-center justify-between text-xs font-mono">
-                <div className="flex items-center gap-2.5">
-                  <div className={`w-2.5 h-2.5 rounded-full ${
-                    shipState === 'parked' ? 'bg-emerald-400' : 'bg-amber-400 animate-ping'
-                  }`} />
-                  <span className="font-bold text-slate-200">
-                    {shipState === 'sailing' && 'APPROACHING HARBOUR'}
-                    {shipState === 'decelerating' && 'DECELERATING & TURNING'}
-                    {shipState === 'parked' && 'SECURELY PARKED IN WATER'}
-                  </span>
-                </div>
-                <button
-                  onClick={restartShip}
-                  title="Replay Ship Berthing Simulation"
-                  className="px-2.5 py-1 rounded-md bg-white/10 hover:bg-white/20 text-slate-300 hover:text-white flex items-center gap-1 transition-colors text-[11px]"
-                >
-                  <RotateCcw className="w-3 h-3" />
-                  <span>Replay</span>
-                </button>
-              </div>
-
-              {/* WATER BASIN & BERTHING WATERWAY VIEWPORT */}
-              <div className="relative aspect-[16/11] w-full overflow-hidden bg-gradient-to-b from-[#0e2a47] via-[#092038] to-[#051424]">
-                
-                {/* 1. Water Ripple Vector Grid */}
-                <div 
-                  className="absolute inset-0 opacity-20"
-                  style={{
-                    backgroundImage: 'radial-gradient(#38bdf8 1px, transparent 1px)',
-                    backgroundSize: '24px 24px'
-                  }}
+              {/* Image Window */}
+              <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#241a12]">
+                <Image
+                  src="/images/ntcpwc/campus_hq.jpg"
+                  alt="NTCPWC IIT Madras Discovery Campus"
+                  fill
+                  priority
+                  className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
-
-                {/* 2. Realistic Water Wave Layers (Animated SVG Currents) */}
-                <svg className="absolute inset-0 w-full h-full opacity-40 pointer-events-none" xmlns="http://www.w3.org/2000/svg">
-                  <path 
-                    d="M 0,160 Q 150,140 300,165 T 600,160" 
-                    fill="none" 
-                    stroke="#38bdf8" 
-                    strokeWidth="1.5" 
-                    className="animate-pulse"
-                  />
-                  <path 
-                    d="M 0,220 Q 200,200 400,225 T 800,220" 
-                    fill="none" 
-                    stroke="#0284c7" 
-                    strokeWidth="1.5"
-                  />
-                  <path 
-                    d="M 0,280 Q 180,265 360,285 T 720,280" 
-                    fill="none" 
-                    stroke="#0369a1" 
-                    strokeWidth="2"
-                  />
-                </svg>
-
-                {/* 3. The Discovery Pier / Quay Wall (Where the ship parks) */}
-                <div className="absolute right-0 top-16 bottom-16 w-16 bg-[#1e293b] border-l-4 border-[#c29b68] shadow-2xl flex flex-col justify-between p-2">
-                  <div className="w-3 h-3 rounded-full bg-amber-400 border border-white shadow-sm" />
-                  <div className="text-[9px] font-mono font-bold text-[#c29b68] -rotate-90 whitespace-nowrap tracking-wider">
-                    BERTH 01 • IIT MADRAS
-                  </div>
-                  <div className="w-3 h-3 rounded-full bg-amber-400 border border-white shadow-sm" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1f150d]/85 via-transparent to-transparent" />
+                
+                {/* Floating Badge in Warm Sand */}
+                <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/95 backdrop-blur-md text-[#6e4e2a] text-xs font-bold shadow-md border border-[#e8ded0]">
+                  IIT MADRAS DISCOVERY CAMPUS
                 </div>
 
-                {/* 4. THE ANIMATED SHIP (Navigates in and parks at the berth) */}
-                <div 
-                  className="absolute top-1/2 left-1/4 -translate-y-1/2 transition-transform duration-300 ease-out"
-                  style={{
-                    transform: `translate(${shipX}px, ${shipY}px) rotate(${shipAngle}deg)`,
-                  }}
-                >
-                  {/* Water Wake Waves behind Ship */}
-                  {shipState !== 'parked' && (
-                    <div className="absolute -left-16 top-1/2 -translate-y-1/2 flex items-center pointer-events-none opacity-80">
-                      <div className="w-16 h-8 border-b-2 border-white/60 rounded-full animate-ping" />
-                      <div className="w-12 h-6 border-b-2 border-cyan-300/60 rounded-full" />
-                    </div>
-                  )}
-
-                  {/* Ship Body & Vessel Graphic */}
-                  <div className="relative group cursor-pointer">
-                    <div className="w-48 sm:w-56 h-20 rounded-2xl bg-gradient-to-r from-[#1e293b] via-[#334155] to-[#f8fafc] border-2 border-white/40 shadow-2xl flex items-center px-4 relative overflow-hidden">
-                      
-                      {/* Navigational Bridge Superstructure */}
-                      <div className="absolute top-1 left-12 w-16 h-6 rounded-t-md bg-[#0284c7] border border-cyan-300 flex items-center justify-center">
-                        <div className="flex gap-1">
-                          <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                          <div className="w-1.5 h-1.5 rounded-full bg-white" />
-                        </div>
-                      </div>
-
-                      {/* Mast & Radar Scanner */}
-                      <div className="absolute -top-3 left-20 w-1 h-4 bg-white">
-                        <div className="w-3 h-1 -ml-1 bg-amber-400 animate-spin" />
-                      </div>
-
-                      {/* Vessel Insignia & Label */}
-                      <div className="flex items-center gap-2.5 z-10">
-                        <div className="w-8 h-8 rounded-lg bg-[#b45309] text-white flex items-center justify-center font-bold text-xs shadow-md">
-                          <Ship className="w-4 h-4" />
-                        </div>
-                        <div>
-                          <div className="text-[11px] font-black text-white tracking-wide font-mono">
-                            R/V DISCOVERY
-                          </div>
-                          <div className="text-[8.5px] font-mono text-cyan-300 font-semibold">
-                            NTCPWC SURVEY FLEET
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Bow Wave Foam Cutter */}
-                      <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white/80 to-transparent" />
-                    </div>
-
-                    {/* Mooring Lines when Parked */}
-                    {shipState === 'parked' && (
-                      <>
-                        <div className="absolute -right-8 top-2 w-8 h-0.5 bg-amber-400 shadow-sm animate-pulse" />
-                        <div className="absolute -right-8 bottom-2 w-8 h-0.5 bg-amber-400 shadow-sm animate-pulse" />
-                        <div className="absolute -top-7 right-0 px-2 py-0.5 rounded bg-emerald-500 text-white font-mono text-[9px] font-bold shadow-lg flex items-center gap-1">
-                          <Anchor className="w-3 h-3" />
-                          <span>MOORED @ QUAY</span>
-                        </div>
-                      </>
-                    )}
+                {/* Bottom Caption inside media */}
+                <div className="absolute bottom-4 left-4 right-4 text-white">
+                  <div className="text-xs font-mono uppercase tracking-wider text-[#deb887] mb-1">
+                    20-Acre Research Infrastructure
+                  </div>
+                  <div className="text-sm font-semibold leading-snug">
+                    National Technology Centre for Ports, Waterways and Coasts (NTCPWC)
                   </div>
                 </div>
-
-                {/* 5. Water Surface Radiating Ripples when Parked */}
-                {shipState === 'parked' && (
-                  <div className="absolute top-1/2 right-24 -translate-y-1/2 pointer-events-none">
-                    <div className="w-32 h-32 rounded-full border border-cyan-400/30 animate-ping" />
-                  </div>
-                )}
-
-                {/* 6. Floating Overlay: Discovery Campus Photo Card Badge */}
-                <div className="absolute bottom-3 left-3 p-2.5 rounded-xl bg-[#091522]/90 border border-white/15 backdrop-blur-md flex items-center gap-2.5 shadow-lg">
-                  <div className="relative w-12 h-10 rounded-lg overflow-hidden shrink-0 border border-white/20">
-                    <Image
-                      src="/images/ntcpwc/campus_hq.jpg"
-                      alt="Discovery Campus"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div>
-                    <div className="text-[10px] font-mono text-[#c29b68] font-bold">20-Acre Research Testbed</div>
-                    <div className="text-[11px] font-bold text-white leading-tight">IIT Madras Discovery Campus</div>
-                  </div>
-                </div>
-
               </div>
 
-              {/* BOTTOM TELEMETRY TELEMETRY BAR */}
-              <div className="p-3 bg-[#0a1524] border-t border-white/10 flex items-center justify-between text-xs font-mono">
-                <div className="flex items-center gap-4 text-[11px]">
-                  <div>
-                    <span className="text-slate-400">Vessel Speed: </span>
-                    <span className="font-bold text-amber-400">{shipSpeed} kts</span>
-                  </div>
-                  <div>
-                    <span className="text-slate-400">Berth Depth: </span>
-                    <span className="font-bold text-cyan-300">12.5m</span>
-                  </div>
-                </div>
-                <div className="text-[10px] text-slate-400">
-                  GPS: 12.8202° N, 80.1989° E
-                </div>
+              {/* Quick Info bar below hero visual */}
+              <div className="p-4 bg-[#faf6f0] border-t border-[#e8ded0] flex items-center justify-between text-xs text-[#6e5d4e]">
+                <span className="font-semibold text-[#543f2a]">Discovery Campus • Thaiyur, Chennai</span>
+                <Link href="/about" className="font-semibold text-[#8c6d46] hover:text-[#6e4e2a] flex items-center gap-1">
+                  <span>Virtual Tour</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </Link>
               </div>
 
             </div>
